@@ -1,0 +1,23 @@
+   <div class="render">
+   <h4><%=section_title%></h4>
+   <small><%= todos.completed.count %>/<%= todos.count  %></small>
+   <% todos.each do |todo| %>
+   <div class="check">
+   <%= form_with(url: "/todos/#{todo.id}", method:"put") do %>
+   <input type="checkbox" 
+   class="checkbox" 
+   name="completed" <%= todo.completed ? "checked" : " " %>
+   onclick="this.form.submit()"
+   /> 
+   <% end %>
+   <%= todo.todo_text%>
+   <% if show_due_date%>
+   <small class="date"><%= todo.due_date.to_s(:short)%><small>
+   <% end%>
+   <%# <a href="javascript:void(0)" class="TodoItem-delete"> %>
+   <%= form_with(url: "/todos/#{todo.id}", method:"delete") do %>
+  <input type='image' src="trash-can-outline.png">
+  <% end%>
+   </div>
+   <% end %>
+   </div>

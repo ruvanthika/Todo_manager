@@ -1,0 +1,17 @@
+
+.userheader{
+    padding: 10px;
+    background-color: lightgray;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.Flash{
+    color: darkred;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align:center;
+
+}
